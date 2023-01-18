@@ -1,33 +1,37 @@
 package com.bgaprojects.barus
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.bgaprojects.barus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navHostFragment: NavHostFragment
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-        setupNavigation()
+
+        setupNavigation(binding)
     }
 
-    private fun setupNavigation() {
-        val navController = findNavController(R.id.nav_host_fragment_container_main)
+    private fun setupNavigation(binding: ActivityMainBinding) {
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
-        binding.bottomNavigation.setupWithNavController(navController)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_container_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        binding.bottomNavigation.apply {
+            setupWithNavController(navController)
+            setOnItemSelectedListener {
+                it.onNavDestinationSelected(navController)
+            }
+            //TODO Navigate Screen on click add habit
+        }
     }
 }

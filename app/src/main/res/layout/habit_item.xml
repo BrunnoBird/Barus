@@ -19,7 +19,7 @@
         tools:text="Estudar Android" />
 
     <CheckBox
-        android:id="@+id/cbHabitItemCompleted"
+        android:id="@+id/habitItemCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tvHabitItemTitle"

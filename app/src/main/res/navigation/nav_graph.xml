@@ -6,7 +6,15 @@
     app:startDestination="@+id/dashboardFragment">
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="DashboardFragment"
+        android:name="com.bgaprojects.barus.collections.DashboardFragment"
         android:label="DashboardFragment"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_habitFormFragment"
+            app:destination="@id/habitFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/habitFormFragment"
+        android:name="com.bgaprojects.barus.form.HabitFormFragment"
+        android:label="HabitFormFragment" />
 </navigation>
