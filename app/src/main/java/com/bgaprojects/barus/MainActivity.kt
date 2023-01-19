@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             setOnItemSelectedListener {
                 it.onNavDestinationSelected(navController)
             }
-            //TODO Navigate Screen on click add habit
         }
     }
 }
