@@ -22,8 +22,11 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemIconTint="@color/bottom_menu_item_foreground"
+        app:itemTextColor="@color/bottom_menu_item_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation_menu" />
 
