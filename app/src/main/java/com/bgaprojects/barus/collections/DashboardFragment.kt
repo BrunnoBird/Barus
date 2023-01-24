@@ -37,6 +37,7 @@ class DashboardFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        lifecycle.addObserver(HabitListLifecycleObserver(viewModel))
         adapterHabitList = HabitListAdapter(viewModel)
     }
 
@@ -50,6 +51,13 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+        viewModel.stateOnceAndStream().observe(viewLifecycleOwner) {
+            bindUiState(it)
+        }
+    }
+
+    private fun bindUiState(uiState: HabitListViewModel.UiState) {
+        adapterHabitList.updateHabits(uiState.habitItemList)
     }
 
     private fun setupRecyclerView() {

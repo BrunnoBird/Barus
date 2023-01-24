@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Segunda" />
+                android:text="Domingo" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipTwo"
@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Terça" />
+                android:text="Segunda" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipThree"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Quarta" />
+                android:text="Terça" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipFour"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Quinta" />
+                android:text="Quarta" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipFive"
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Sexta" />
+                android:text="Quinta" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSix"
@@ -104,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Sábado" />
+                android:text="Sexta" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSeven"
@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
-                android:text="Domingo" />
+                android:text="Sábado" />
         </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -121,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            app:boxStrokeColor="@color/yellow_dark"
             app:endIconDrawable="@drawable/ic_note_add"
             app:helperText="Obrigatório*"
             app:helperTextTextColor="@color/black"
@@ -128,7 +129,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cgDaysOfWeek"
             app:placeholderText="Corrida"
-            app:boxStrokeColor="@color/yellow_dark"
             app:placeholderTextColor="@color/gray_soft">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -149,7 +149,7 @@
             app:layout_constraintGuide_percent="0.90" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton"
+            android:id="@+id/btnSaveHabit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
