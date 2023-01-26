@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- CUSTOM CHIP -->
     <style name="my.theme.chip.choice" parent="Widget.MaterialComponents.Chip.Action">
         <!-- Chip background color selector -->
         <item name="chipBackgroundColor">@color/chip_background_color</item>

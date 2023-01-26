@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tvHabitItemTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvHabitItemTitle" />
+        app:layout_constraintTop_toTopOf="@+id/tvHabitItemTitle"
+        android:buttonTint="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
