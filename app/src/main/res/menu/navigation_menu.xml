@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/dashboardFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/bottom_menu_item_dashboard_foreground"
         android:title="Dashboard" />
     <item
         android:id="@+id/habitFormFragment"
-        android:icon="@drawable/ic_note_add"
+        android:icon="@drawable/bottom_menu_item_addnote_foreground"
         android:title="Adicionar" />
     <item
         android:id="@+id/progressFragment"
-        android:icon="@drawable/ic_bar_chart"
+        android:icon="@drawable/bottom_menu_item_chart_foreground"
         android:title="Progresso" />
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_person"
+        android:icon="@drawable/bottom_menu_item_person_foreground"
         android:title="Perfil" />
 </menu>

@@ -40,7 +40,7 @@ class HabitListAdapter(
             binding.habitItemCheckBox.isChecked = habit.isCompleted
 
             binding.habitItemCheckBox.setOnClickListener {
-                //viewModel.toggleHabitCompleted(habit.id)
+                viewModel.toggleHabitCompleted(habit.id)
             }
         }
     }

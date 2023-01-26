@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="8dp">
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    tools:background="@color/gray_soft">
 
     <TextView
         android:id="@+id/tvHabitItemTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:ellipsize="end"
+        android:fontFamily="@font/indieflower_regular"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/habitItemCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Estudar Android" />
@@ -24,6 +29,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tvHabitItemTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvHabitItemTitle" />
+        app:layout_constraintTop_toTopOf="@+id/tvHabitItemTitle"
+        android:buttonTint="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

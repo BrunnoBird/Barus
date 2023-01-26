@@ -13,4 +13,14 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- CUSTOM CHIP -->
+    <style name="my.theme.chip.choice" parent="Widget.MaterialComponents.Chip.Action">
+        <!-- Chip background color selector -->
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <!-- Chip text color selector -->
+        <item name="android:textColor">@color/chip_text_color</item>
+        <!-- Chip icon color selector -->
+        <item name="checkedIconTint">@color/gray_soft</item>
+    </style>
 </resources>
