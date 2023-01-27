@@ -5,8 +5,6 @@ import java.time.DayOfWeek
 
 interface HabitRepository {
 
-    suspend fun fetchAll(): List<HabitDomain>
-
     suspend fun fetch(dayOfWeek: Int): List<HabitDomain>
 
     suspend fun add(title: String, dayOfWeek: List<Int>)

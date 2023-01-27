@@ -1,32 +1,38 @@
 package com.bgaprojects.barus.core.repository
 
+import com.bgaprojects.barus.core.database.AppDatabase
+import com.bgaprojects.barus.core.database.entity.Progress
 import com.bgaprojects.barus.core.model.ProgressDomain
 import java.util.*
 
-object ProgressRepositoryImpl : ProgressRepository {
-
-    private val progressListCache: MutableList<ProgressDomain> = mutableListOf()
+class ProgressRepositoryImpl(appDatabase: AppDatabase) : ProgressRepository {
+    private val dao = appDatabase.progressDao()
 
     override suspend fun fetch(habitId: String, completedAt: Long): List<ProgressDomain> {
-        val calendar = Calendar.getInstance()
-        calendar.timeInMillis = completedAt
-        return progressListCache.filter {
-            it.habitId == habitId && it.dayOfWeek == calendar.get(Calendar.DAY_OF_WEEK)
+        return dao.fetchProgressByHabit(habitId, completedAt).map { progress ->
+            val calendar = Calendar.getInstance()
+            calendar.timeInMillis = progress.completedAt
+
+            ProgressDomain(
+                id = progress.uuid,
+                habitId = progress.habitId,
+                dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
+            )
         }
     }
 
     override suspend fun delete(id: String) {
-        progressListCache.removeAll { it.id == id }
+        dao.delete(progressId = id)
     }
 
     override suspend fun add(habitId: String) {
-        val dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
-        val progress = ProgressDomain(
-            id = UUID.randomUUID().toString(),
+        val dayOfWeek = Calendar.getInstance()
+        val progress = Progress(
+            uuid = UUID.randomUUID().toString(),
             habitId = habitId,
-            dayOfWeek = dayOfWeek
+            completedAt = dayOfWeek.timeInMillis //salvamos completo (com milissegundos)
         )
-
-        progressListCache.add(progress)
+WW
+        dao.insert(progress)
     }
 }
