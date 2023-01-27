@@ -117,28 +117,23 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilHabitFormName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/MyCustomTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:boxStrokeColor="@color/yellow_dark"
             app:endIconDrawable="@drawable/ic_note_add"
             app:helperText="Obrigatório*"
-            app:helperTextTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cgDaysOfWeek"
-            app:placeholderText="Corrida"
-            app:placeholderTextColor="@color/gray_soft">
+            app:placeholderText="Corrida">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietHabitFormName"
+                style="@style/MyCustomTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="Nome do hábito"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+                android:hint="Nome do hábito" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.Guideline
